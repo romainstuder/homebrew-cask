@@ -7,15 +7,12 @@ cask "figtree" do
   desc "Phylogenetic tree viewer"
   homepage "https://github.com/rambaut/figtree/"
 
-  deprecate! date: "2025-03-02", because: :unmaintained
-  disable! date: "2026-03-02", because: :unmaintained
+  livecheck do
+    skip "No version information available"
+  end
 
   depends_on :macos
 
   app "FigTree v#{version}.app"
   qlplugin "QuickLook Plugin/FigTreeQuickLookPlugin.qlgenerator"
-
-  caveats do
-    requires_rosetta
-  end
 end
